@@ -1,0 +1,62 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --background: #050505;
+  --surface: #0D0D0D;
+  --surface-light: #151515;
+  --primary: #E10600;
+  --text: #FFFFFF;
+  --muted: #8A8A8A;
+  --border: #242424;
+}
+
+/* Custom Sleek Dark Scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: #050505;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #242424;
+  border-radius: 3px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #E10600;
+}
+
+/* Subtle carbon / telemetry grid background */
+.telemetry-grid {
+  background-size: 40px 40px;
+  background-image: 
+    linear-gradient(to right, rgba(255, 255, 255, 0.02) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(255, 255, 255, 0.02) 1px, transparent 1px);
+}
+
+.carbon-subtle {
+  background-image: radial-gradient(rgba(255, 255, 255, 0.05) 1px, transparent 1px);
+  background-size: 16px 16px;
+}
+
+/* Racing line glow effect */
+.racing-glow {
+  box-shadow: 0 0 25px -4px rgba(225, 6, 0, 0.45);
+}
+
+.racing-glow-sm {
+  box-shadow: 0 0 12px 0 rgba(225, 6, 0, 0.35);
+}
+
+/* Telemetry scanline micro-accent */
+.scanline-overlay {
+  background: linear-gradient(
+    rgba(18, 16, 16, 0) 50%, 
+    rgba(0, 0, 0, 0.25) 50%
+  );
+  background-size: 100% 4px;
+}
