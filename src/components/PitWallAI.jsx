@@ -29,9 +29,12 @@ export default function PitWallAI({ isOpen, setIsOpen }) {
   const [keySaved, setKeySaved] = useState(false);
   const messagesEndRef = useRef(null);
 
-  // Load API key from localStorage on mount
+  // Load API key from localStorage or env on mount
   useEffect(() => {
-    const savedKey = localStorage.getItem("hf_api_token") || "";
+    const savedKey =
+      localStorage.getItem("hf_api_token") ||
+      import.meta.env.VITE_HF_API_TOKEN ||
+      "";
     if (savedKey) {
       setApiKey(savedKey);
       setTempApiKey(savedKey);
