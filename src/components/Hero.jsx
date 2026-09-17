@@ -3,7 +3,7 @@ import { motion } from "framer-motion";
 import { portfolioData } from "../data/portfolioData";
 import { HiArrowSmRight } from "react-icons/hi";
 
-export default function Hero() {
+export default function Hero({ onOpenAI }) {
   const { driver } = portfolioData;
 
   return (
@@ -89,18 +89,26 @@ export default function Hero() {
           </div>
 
           {/* CTA Buttons */}
-          <div className="flex flex-wrap items-center gap-4 sm:gap-5">
+          <div className="flex flex-wrap items-center gap-3 sm:gap-4">
             <a
               href="#racing"
-              className="group relative inline-flex items-center justify-center gap-3 px-7 py-3.5 bg-primary text-white font-heading font-semibold text-xs sm:text-sm tracking-wider uppercase overflow-hidden rounded-sm transition-all duration-300 hover:bg-primary-hover hover:shadow-[0_0_20px_rgba(225,6,0,0.4)]"
+              className="group relative inline-flex items-center justify-center gap-2.5 px-6 py-3.5 bg-primary text-white font-heading font-semibold text-xs sm:text-sm tracking-wider uppercase overflow-hidden rounded-sm transition-all duration-300 hover:bg-primary-hover hover:shadow-[0_0_20px_rgba(225,6,0,0.4)]"
             >
               <span>VIEW RACING PROFILE</span>
               <HiArrowSmRight className="text-lg transition-transform duration-300 group-hover:translate-x-1" />
             </a>
 
+            <button
+              onClick={onOpenAI}
+              className="inline-flex items-center justify-center gap-2 px-5 py-3.5 bg-primary/10 border border-primary/50 text-white font-heading font-semibold text-xs sm:text-sm tracking-wider uppercase rounded-sm hover:bg-primary hover:border-primary transition-all duration-300 shadow-[0_0_15px_rgba(225,6,0,0.2)]"
+            >
+              <span className="w-2 h-2 rounded-full bg-primary animate-ping" />
+              <span>PIT WALL AI</span>
+            </button>
+
             <a
               href="#contact"
-              className="inline-flex items-center justify-center px-7 py-3.5 bg-[#0D0D0D] border border-[#242424] text-white font-heading font-medium text-xs sm:text-sm tracking-wider uppercase rounded-sm hover:border-white/40 hover:bg-[#151515] transition-all duration-300"
+              className="inline-flex items-center justify-center px-5 py-3.5 bg-[#0D0D0D] border border-[#242424] text-[#8A8A8A] hover:text-white font-heading font-medium text-xs sm:text-sm tracking-wider uppercase rounded-sm hover:border-white/40 hover:bg-[#151515] transition-all duration-300"
             >
               CONTACT
             </a>

@@ -3,7 +3,7 @@ import { motion, AnimatePresence } from "framer-motion";
 import { HiMenuAlt3, HiX } from "react-icons/hi";
 import { portfolioData } from "../data/portfolioData";
 
-export default function Navbar() {
+export default function Navbar({ onOpenAI }) {
   const [scrolled, setScrolled] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
@@ -64,9 +64,16 @@ export default function Navbar() {
               <span className="absolute bottom-0 left-0 w-0 h-[1.5px] bg-primary transition-all duration-300 group-hover:w-full" />
             </a>
           ))}
+          <button
+            onClick={onOpenAI}
+            className="flex items-center gap-1.5 px-3 py-1.5 text-xs font-mono tracking-wider uppercase text-white bg-primary/10 border border-primary/40 hover:bg-primary hover:border-primary transition-all duration-200 rounded-sm"
+          >
+            <span className="w-1.5 h-1.5 rounded-full bg-primary animate-ping" />
+            <span>AI CO-PILOT</span>
+          </button>
           <a
             href="#contact"
-            className="ml-2 px-4 py-1.5 text-xs font-mono tracking-wider uppercase text-white bg-[#0D0D0D] border border-[#242424] hover:border-primary hover:text-white transition-all duration-200 rounded-sm"
+            className="ml-1 px-4 py-1.5 text-xs font-mono tracking-wider uppercase text-white bg-[#0D0D0D] border border-[#242424] hover:border-primary hover:text-white transition-all duration-200 rounded-sm"
           >
             Enquire
           </a>
@@ -104,6 +111,16 @@ export default function Navbar() {
                   <span className="text-xs font-mono text-[#8A8A8A]">→</span>
                 </a>
               ))}
+              <button
+                onClick={() => {
+                  setMobileMenuOpen(false);
+                  onOpenAI();
+                }}
+                className="w-full mt-2 py-2.5 px-4 bg-primary/20 hover:bg-primary border border-primary/50 text-white font-mono text-xs uppercase tracking-wider rounded-sm transition-all flex items-center justify-center gap-2"
+              >
+                <span className="w-2 h-2 rounded-full bg-primary animate-ping" />
+                <span>LAUNCH PIT WALL AI CO-PILOT</span>
+              </button>
               <div className="pt-2 flex items-center justify-between text-xs font-mono text-[#8A8A8A]">
                 <span>STATUS: {portfolioData.driver.statusText}</span>
                 <span className="text-primary">CAR #{portfolioData.driver.carNumber}</span>
